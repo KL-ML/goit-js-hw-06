@@ -13,8 +13,7 @@ const listOfIngredients = document.querySelector('#ingredients');
 const ingredientsMarkup = [];
 ingredients.forEach((ingr) => {
   const item = document.createElement('li');
-  const title = ingr;
-  item.textContent = title;
+  item.textContent = ingr;
   item.classList.add('item'); 
   // console.log(item);
   ingredientsMarkup.push(item);  
