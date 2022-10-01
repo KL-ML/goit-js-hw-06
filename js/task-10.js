@@ -6,10 +6,10 @@ const input = document.querySelector('input');
 const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
 const boxesDiv = document.querySelector('#boxes');
-console.log(input);
-console.log(btnCreate);
-console.log(btnDestroy);
-console.log(boxesDiv);
+// console.log(input);
+// console.log(btnCreate);
+// console.log(btnDestroy);
+// console.log(boxesDiv);
 
 btnCreate.addEventListener('click', createBoxes);
 let boxSize = 20;
@@ -23,7 +23,7 @@ function createBoxes(amount) {
     oneDivBox.style.height = `${boxSize}px`;
     oneDivBox.style.width = `${boxSize}px`;
     countOfDivs.push(oneDivBox);
-    console.log(oneDivBox);
+    // console.log(oneDivBox);
   }
   boxesDiv.append(...countOfDivs);
   input.value = '';
