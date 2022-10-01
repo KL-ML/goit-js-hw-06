@@ -14,12 +14,12 @@ inputField.addEventListener('blur', (event) => {
         }
     } else if (inputValue.length === 0) {
         inputField.classList.remove("valid") || inputField.classList.remove("invalid");
-    } else {
-        if (inputField.classList.contains("valid")) {
-            inputField.classList.replace("valid", "invalid")
-        } else {
-            inputField.classList.add("invalid");
-        }
+    } else { inputField.classList.add("invalid")
+        // if (inputField.classList.contains("valid")) {
+        //     inputField.classList.replace("valid", "invalid")
+        // } else {
+        //     inputField.classList.add("invalid");
+        // }
     }
  });
 
