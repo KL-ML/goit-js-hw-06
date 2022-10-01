@@ -5,23 +5,32 @@ const dataLength = Number(inputField.getAttribute('data-length'));
 // console.log(inputField);
 
 inputField.addEventListener('blur', (event) => {
-    const inputValue = event.currentTarget.value;
-    if (inputValue.length === dataLength) {
-        if (inputField.classList.contains("invalid")) {
-            inputField.classList.replace("invalid", "valid")
-        } else {
-            inputField.classList.add("valid");
-        }
-    } else if (inputValue.length === 0) {
-        inputField.classList.remove("valid") || inputField.classList.remove("invalid");
-    } else { inputField.classList.add("invalid")
-        // if (inputField.classList.contains("valid")) {
-        //     inputField.classList.replace("valid", "invalid")
-        // } else {
-        //     inputField.classList.add("invalid");
-        // }
+    inputField.classList.remove(`valid`);
+    inputField.classList.remove(`invalid`);
+    if (event.currentTarget.value.length === dataLength) {
+        event.currentTarget.classList.add("valid");
+    } else if (event.currentTarget.value.length !== 0){
+        event.currentTarget.classList.add("invalid");
     }
- });
+}
+
+    // const inputValue = event.currentTarget.value;
+    // if (inputValue.length === dataLength) {
+    //     if (inputField.classList.contains("invalid")) {
+    //         inputField.classList.replace("invalid", "valid")
+    //     } else {
+    //         inputField.classList.add("valid");
+    //     }
+    // } else if (inputValue.length === 0) {
+    //     inputField.classList.remove("valid") || inputField.classList.remove("invalid");
+    // } else { inputField.classList.add("invalid")
+    //     // if (inputField.classList.contains("valid")) {
+    //     //     inputField.classList.replace("valid", "invalid")
+    //     // } else {
+    //     //     inputField.classList.add("invalid");
+    //     // }
+    // }
+ );
 
 //   Напиши скрипт, который при потере фокуса на инпуте(событие blur), 
 // проверяет его содержимое на правильное количество введённых символов.
