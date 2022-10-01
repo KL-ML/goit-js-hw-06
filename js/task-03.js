@@ -12,3 +12,29 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryList = document.querySelector('.gallery');
+galleryList.style.cssText += 'list-style-type:none;display:flex;gap:15px;';
+// galleryList.style.listStyleType = "none";
+// galleryList.style.display = "flex";
+// galleryList.style.gap = "15px"
+// console.log(galleryList);
+
+const markup = ({ url, alt }) => {
+  return `<li><img src="${url}" height="300" alt="${alt}"></li>`;
+};
+// console.log(markup);
+const makeImagesMarkup = images
+  .map(markup)
+  .join('');
+galleryList.insertAdjacentHTML("afterbegin", makeImagesMarkup);
+// Напиши скрипт для создания галереи изображений по массиву данных. 
+// В HTML есть список ul.gallery.
+
+// <ul class="gallery"></ul>
+
+// Используй массив объектов images для создания элементов <img> вложенных в <li>. 
+// Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
+
+// Все элементы галереи должны добавляться в DOM за одну операцию вставки.
+// Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
