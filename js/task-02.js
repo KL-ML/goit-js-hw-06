@@ -20,7 +20,7 @@ ingredients.forEach((ingr) => {
 });
 
 // console.log(ingredientsMarkup);
-listOfIngredients.after(...ingredientsMarkup);
+listOfIngredients.append(...ingredientsMarkup);
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
