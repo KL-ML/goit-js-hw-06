@@ -6,17 +6,20 @@ const dataLength = Number(inputField.getAttribute('data-length'));
 
 inputField.addEventListener('blur', (event) => {
     const inputValue = event.currentTarget.value;
-    if (inputValue.length !== dataLength &&
-        inputField.classList.contains("valid") !== true) {
-        inputField.classList.add("invalid");
-    } else if (inputValue.length !== dataLength &&
-        inputField.classList.contains("valid") === true) {
-        inputField.classList.replace("valid", "invalid");
-    } else if (inputValue.length === dataLength &&
-        inputField.classList.contains("invalid") === true) {
-        inputField.classList.replace("invalid", "valid");
+    if (inputValue.length === dataLength) {
+        if (inputField.classList.contains("invalid")) {
+            inputField.classList.replace("invalid", "valid")
+        } else {
+            inputField.classList.add("valid");
+        }
+    } else if (inputValue.length === 0) {
+        inputField.classList.remove("valid") || inputField.classList.remove("invalid");
     } else {
-        inputField.classList.add("valid");
+        if (inputField.classList.contains("valid")) {
+            inputField.classList.replace("valid", "invalid")
+        } else {
+            inputField.classList.add("invalid");
+        }
     }
  });
 
